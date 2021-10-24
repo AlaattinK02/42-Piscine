@@ -29,7 +29,7 @@ char *ft_strstr(char *str, char *to_find)
 		{
 			if (to_find[f + 1] == '\0')
 				return (&str[i]);
-			++j;
+			++f;
 		}
 		++i;
 	}
