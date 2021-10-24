@@ -25,7 +25,6 @@ char	*ft_strcat(char *dest, char *src)
 	{
 		i++;
 	}
-	i++;
 	while (src[srci] != '\0')
 	{
 		dest[i] = src[srci];
@@ -34,16 +33,4 @@ char	*ft_strcat(char *dest, char *src)
 	}
 	dest[i] = '\0';
 	return (dest);
-}
-
-int		main(void)
-{
-	char dest[20] = "Hello";
-	char src[] = ", world!";
-
-	printf("-----\ndest = %s\nsrc = %s\n", dest, src);
-	ft_strcat(dest, src);
-	printf("result = %s\n-----\n", dest);
-
-	return (0);
 }
