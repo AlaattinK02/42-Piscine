@@ -16,21 +16,21 @@
 
 char *ft_strstr(char *str, char *to_find)
 {
-	int	i;
-	int	srci;
+	int i;
+	int f;
 
 	i = 0;
-	srci = 0;
+	if (to_find[0] == '\0')
+		return (str);
 	while (str[i] != '\0')
 	{
-		i++;
+		j = 0;
+		while (str[i + f] != '\0' && str[i + f] == to_find[f])
+		{
+			if (to_find[f + 1] == '\0')
+				return (&str[i]);
+			++j;
+		}
+		++i;
 	}
-	while (src[srci] != '\0')
-	{
-		dest[i] = src[srci];
-		i++;
-		srci++;
-	}
-	dest[i] = '\0';
-	return (dest);
-}
+	return (0);
