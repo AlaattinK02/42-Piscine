@@ -6,7 +6,7 @@
 /*   By: akoral <akoral@student.42istanbul.com.tr>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/23 17:24:59 by akoral            #+#    #+#             */
-/*   Updated: 2021/10/23 18:26:02 by akoral           ###   ########.fr       */
+/*   Updated: 2021/10/23 17:50:17 by akoral           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 #include <string.h>
 #include <stdbool.h>
 
- int ft_strcmp(char *s1, char *s2)
+unsigned int	ft_strlcpy(char *dest, char *src, unsigned int size)
 {
 	unsigned int	i;
 	unsigned int	len;

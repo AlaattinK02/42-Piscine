@@ -6,7 +6,7 @@
 /*   By: akoral <akoral@student.42istanbul.com.tr>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/23 15:14:08 by akoral            #+#    #+#             */
-/*   Updated: 2021/10/23 17:47:18 by akoral           ###   ########.fr       */
+/*   Updated: 2021/10/24 11:59:38 by akoral           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 #include <string.h>
 #include <stdbool.h>
 
-int	ft_str_is_uppercase(char *str)
+int	ft_str_is_printable(char *str)
 {
 	int		i;
 	bool	zero;
@@ -24,7 +24,7 @@ int	ft_str_is_uppercase(char *str)
 	i = 0;
 	while (str[i] != '\0')
 	{
-		if (!((str[i] >= ' ' && str[i] == 127)))
+		if (!((str[i] >= 32 && str[i] <= 127)))
 		{
 			zero = true;
 		}
