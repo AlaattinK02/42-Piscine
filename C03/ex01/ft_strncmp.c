@@ -14,17 +14,17 @@
 #include <string.h>
 #include <stdbool.h>
 
-int	ft_strsame(char *s1, char *s2, unsigned int n, int i)
+int	ft_strsame(char *s1, char *s2, int i)
 {
 	return ((s1[i] == s2[i]) && (s1[i] != '\0') && (s2[i] != '\0'));
 }
 
 int	ft_strncmp(char *s1, char *s2, unsigned int n)
 {
-	int	i;
+	unsigned int	i;
 
 	i = 0;
-	while (ft_strsame(s1, s2, n, i) && (i < n - 1))
+	while (ft_strsame(s1, s2, i) && (i < n - 1))
 	{
 		i++;
 	}
