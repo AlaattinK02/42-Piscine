@@ -6,7 +6,7 @@
 /*   By: akoral <akoral@student.42istanbul.com.tr>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/24 17:59:55 by akoral            #+#    #+#             */
-/*   Updated: 2021/10/26 16:16:34 by akoral           ###   ########.fr       */
+/*   Updated: 2021/10/26 19:01:52 by akoral           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,20 +18,17 @@ unsigned int	ft_strlcat(char *dest, char *src, unsigned int size)
 {
 	unsigned int	i;
 	unsigned int	srci;
-	unsigned int	len;
+	int				len;
 
 	i = 0;
 	srci = 0;
 	while (dest[i] != '\0')
-	{
 		i++;
-	}
-	len = i;
 	while (src[srci] != '\0')
-	{
 		srci++;
-	}
-	len = srci + len;
+	if (size == 0)
+		return (srci);
+	len = srci + size;
 	srci = 0;
 	while (i < size - 1)
 	{
