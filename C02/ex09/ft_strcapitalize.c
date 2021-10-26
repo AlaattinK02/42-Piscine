@@ -6,7 +6,7 @@
 /*   By: akoral <akoral@student.42istanbul.com.tr>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/23 15:23:50 by akoral            #+#    #+#             */
-/*   Updated: 2021/10/26 15:50:10 by akoral           ###   ########.fr       */
+/*   Updated: 2021/10/26 17:16:38 by akoral           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,9 +30,24 @@ char	*ft_strlowcase(char *str)
 	return (str);
 }
 
-bool	ft_char_isnt_alpha(char str)
+int	ft_char_isnt_alpha(char str)
 {
-	return (!((str >= 'A' && str <= 'Z') || (str >= 'a' && str <= 'z')));
+	if (str >= '0' && str <= '9')
+	{
+		return (false);
+	}
+	else if (str >= 'A' && str <= 'Z')
+	{
+		return (false);
+	}
+	else if (str >= 'a' && str <= 'z')
+	{
+		return (false);
+	}
+	else
+	{
+		return (true);
+	}
 }
 
 char	*ft_strcapitalize(char *str)
@@ -40,6 +55,10 @@ char	*ft_strcapitalize(char *str)
 	int	i;
 
 	i = 0;
+	if (str[0] == '\0')
+	{
+		return (str);
+	}
 	ft_strlowcase(str);
 	if (str[0] >= 'a' && str[0] <= 'z')
 	{
