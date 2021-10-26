@@ -6,7 +6,7 @@
 /*   By: akoral <akoral@student.42istanbul.com.tr>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/24 15:15:03 by akoral            #+#    #+#             */
-/*   Updated: 2021/10/24 15:15:03 by akoral           ###   ########.fr       */
+/*   Updated: 2021/10/26 13:03:53 by akoral           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 #include <string.h>
 #include <stdbool.h>
 
-char *ft_strncat(char *dest, char *src, unsigned int nb)
+char	*ft_strncat(char *dest, char *src, unsigned int nb)
 {
 	unsigned int	i;
 	unsigned int	srci;
