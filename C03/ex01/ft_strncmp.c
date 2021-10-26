@@ -6,7 +6,7 @@
 /*   By: akoral <akoral@student.42istanbul.com.tr>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/24 10:37:07 by akoral            #+#    #+#             */
-/*   Updated: 2021/10/24 11:18:16 by akoral           ###   ########.fr       */
+/*   Updated: 2021/10/26 16:16:50 by akoral           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,19 +14,21 @@
 #include <string.h>
 #include <stdbool.h>
 
-int	ft_strsame(char *s1, char *s2, int i)
-{
-	return ((s1[i] == s2[i]) && (s1[i] != '\0') && (s2[i] != '\0'));
-}
-
 int	ft_strncmp(char *s1, char *s2, unsigned int n)
 {
-	unsigned int	i;
-
-	i = 0;
-	while (ft_strsame(s1, s2, i) && (i < n - 1))
+	while (n > 0)
 	{
-		i++;
+		if (*s1 != *s2)
+		{
+			return (*s1 - *s2);
+		}
+		if (*s1 == '\0')
+		{
+			return (0);
+		}
+		s1++;
+		s2++;
+		n--;
 	}
-	return (s1[i] - s2[i]);
+	return (0);
 }

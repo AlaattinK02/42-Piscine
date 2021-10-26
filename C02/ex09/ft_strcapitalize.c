@@ -6,7 +6,7 @@
 /*   By: akoral <akoral@student.42istanbul.com.tr>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/23 15:23:50 by akoral            #+#    #+#             */
-/*   Updated: 2021/10/26 14:25:29 by akoral           ###   ########.fr       */
+/*   Updated: 2021/10/26 15:50:10 by akoral           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ char	*ft_strlowcase(char *str)
 	return (str);
 }
 
-int	ft_char_isnt_alpha(char str)
+bool	ft_char_isnt_alpha(char str)
 {
 	return (!((str >= 'A' && str <= 'Z') || (str >= 'a' && str <= 'z')));
 }

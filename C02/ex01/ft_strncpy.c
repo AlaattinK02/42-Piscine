@@ -6,7 +6,7 @@
 /*   By: akoral <akoral@student.42istanbul.com.tr>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/23 13:56:32 by akoral            #+#    #+#             */
-/*   Updated: 2021/10/26 14:24:03 by akoral           ###   ########.fr       */
+/*   Updated: 2021/10/26 15:33:43 by akoral           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,18 +16,18 @@
 
 char	*ft_strncpy(char *dest, char *src, unsigned int n)
 {
-	unsigned int	c;
+	unsigned int	i;
 
-	c = 0;
-	while ((src[c] != '\0') && (c < n))
+	i = 0;
+	while (src[i] != '\0' && i < n)
 	{
-		dest[c] = src[c];
-		c++;
+		dest[i] = src[i];
+		i++;
 	}
-	while (c < n)
+	while (i < n)
 	{
-		dest[c] = '\0';
-		c++;
+		dest[i] = '\0';
+		i++;
 	}
 	return (dest);
 }
