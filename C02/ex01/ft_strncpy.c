@@ -6,7 +6,7 @@
 /*   By: akoral <akoral@student.42istanbul.com.tr>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/23 13:56:32 by akoral            #+#    #+#             */
-/*   Updated: 2021/10/27 14:28:23 by akoral           ###   ########.fr       */
+/*   Updated: 2021/10/27 15:16:31 by akoral           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,4 +30,17 @@ char	*ft_strncpy(char *dest, char *src, unsigned int n)
 		c++;
 	}
 	return (dest);
+}
+
+int		main(void)
+{
+	char *src;
+	char dest[20];
+
+	src = "Hello World";
+	printf("base   : %s\n", src);
+	strncpy(dest, src, 3);
+	printf("cpy    : %s\n", dest);
+	ft_strncpy(dest, src, 3);
+	printf("ft_cpy : %s\n", dest);
 }
