@@ -6,13 +6,29 @@
 /*   By: akoral <akoral@student.42istanbul.com.tr>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/24 17:59:55 by akoral            #+#    #+#             */
-/*   Updated: 2021/10/27 19:23:38 by akoral           ###   ########.fr       */
+/*   Updated: 2021/10/27 19:37:42 by akoral           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
 #include <string.h>
 #include <stdbool.h>
+
+unsigned int	ft_strlen(char *str)
+{
+	unsigned int	i;
+
+	i = 0;
+	while (true)
+	{
+		if (str[i] == '\0')
+		{
+			break ;
+		}
+		i++;
+	}
+	return (i);
+}
 
 unsigned int	ft_strlcat(char *dest, char *src, unsigned int size)
 {
@@ -22,12 +38,8 @@ unsigned int	ft_strlcat(char *dest, char *src, unsigned int size)
 	unsigned int	toplam;
 	unsigned int	fdeger;
 
-	i = 0;
-	srci = 0;
-	while (dest[i] != '\0')
-		i++;
-	while (src[srci] != '\0')
-		srci++;
+	i = ft_strlen(dest);
+	srci = ft_strlen(src);
 	if (size == 0)
 		return (srci);
 	fdeger = i;
@@ -44,25 +56,4 @@ unsigned int	ft_strlcat(char *dest, char *src, unsigned int size)
 	if (fdeger < size)
 		return (toplam);
 	return (len);
-}
-
-int				main(void)
-{
-	char	*str_base;
-	char	dest[100];
-	char	dest2[100];
-	char	*src;
-	int		index;
-
-	str_base = "Helldssd";
-	src = " World";
-	index = 0;
-	while (index < 8)
-	{
-		dest[index] = str_base[index];
-		dest2[index] = str_base[index];
-		index++;
-	}
-	printf("c  : (%lu) $%s$\n", strlcat(dest, src, 46), dest);
-	printf("ft : (%d) $%s$\n", ft_strlcat(dest2, src, 46), dest2);
 }
