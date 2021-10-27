@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncmp.c                                       :+:      :+:    :+:   */
+/*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: akoral <akoral@student.42istanbul.com.tr>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/10/24 10:37:07 by akoral            #+#    #+#             */
-/*   Updated: 2021/10/27 17:33:55 by akoral           ###   ########.fr       */
+/*   Created: 2021/10/27 17:23:11 by akoral            #+#    #+#             */
+/*   Updated: 2021/10/27 17:25:38 by akoral           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,21 +14,14 @@
 #include <string.h>
 #include <stdbool.h>
 
-int	ft_strncmp(char *s1, char *s2, unsigned int n)
+int	ft_atoi(char *str)
 {
-	while (n > 0)
+	int	i;
+
+	i = 0;
+	while (str[i] != '\0')
 	{
-		if (*s1 != *s2)
-		{
-			return (*s1 - *s2);
-		}
-		if (*s1 == '\0')
-		{
-			return (0);
-		}
-		s1++;
-		s2++;
-		n--;
+		i++;
 	}
-	return (0);
+	return (i);
 }
