@@ -6,7 +6,7 @@
 /*   By: akoral <akoral@student.42istanbul.com.tr>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/27 17:23:11 by akoral            #+#    #+#             */
-/*   Updated: 2021/10/28 13:35:11 by akoral           ###   ########.fr       */
+/*   Updated: 2021/10/28 14:01:32 by akoral           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 #include <string.h>
 #include <stdbool.h>
 
-int	ft_strlen(char *str)
+int	ft_intlen(char *str)
 {
 	int	i;
 
@@ -51,14 +51,15 @@ int	ft_getminus(char *str)
 
 int	ft_atoi(char *str)
 {
-	int	i;
-	int	intvalue;
+	int	ilen;
+	int	ival;
 
-	i = 0;
-	intvalue = 0;
-	while (str[i] != '\0')
+	ilen = ft_intlen(*str);
+	ival = 0;
+	while (ilen >= 0)
 	{
 
+		ilen--;
 	}
-	return (i);
+	return (ival);
 }
