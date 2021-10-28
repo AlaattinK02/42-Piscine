@@ -6,7 +6,7 @@
 /*   By: akoral <akoral@student.42istanbul.com.tr>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/27 17:23:11 by akoral            #+#    #+#             */
-/*   Updated: 2021/10/28 13:14:05 by akoral           ###   ########.fr       */
+/*   Updated: 2021/10/28 13:35:11 by akoral           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,23 @@ int	ft_strlen(char *str)
 	return (i);
 }
 
+int	ft_getminus(char *str)
+{
+	int	i;
+
+	i = 1;
+	while (str[i] != '\0')
+	{
+		if (str[i] == 45)
+		{
+			i = i * -1;
+		}
+		else if (str[i] >= 48 && str[i] <= 57)
+			break ;
+	}
+	return (i);
+}
+
 int	ft_atoi(char *str)
 {
 	int	i;
@@ -41,11 +58,7 @@ int	ft_atoi(char *str)
 	intvalue = 0;
 	while (str[i] != '\0')
 	{
-		if (str[i] == '-')
-		{
 
-		}
-		i++;
 	}
 	return (i);
 }
