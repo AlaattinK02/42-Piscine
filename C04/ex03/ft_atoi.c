@@ -6,7 +6,7 @@
 /*   By: akoral <akoral@student.42istanbul.com.tr>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/27 17:23:11 by akoral            #+#    #+#             */
-/*   Updated: 2021/10/27 17:25:38 by akoral           ###   ########.fr       */
+/*   Updated: 2021/10/28 13:14:05 by akoral           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,13 +14,37 @@
 #include <string.h>
 #include <stdbool.h>
 
-int	ft_atoi(char *str)
+int	ft_strlen(char *str)
 {
 	int	i;
 
 	i = 0;
 	while (str[i] != '\0')
 	{
+		if (str[i] >= 48 && str[i] <= 57)
+			i++;
+		else if (str[i] == 45 || str[i] == 43 || str[i] == 32)
+		{
+		}
+		else
+			break ;
+	}
+	return (i);
+}
+
+int	ft_atoi(char *str)
+{
+	int	i;
+	int	intvalue;
+
+	i = 0;
+	intvalue = 0;
+	while (str[i] != '\0')
+	{
+		if (str[i] == '-')
+		{
+
+		}
 		i++;
 	}
 	return (i);
