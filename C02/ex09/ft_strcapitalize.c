@@ -6,7 +6,7 @@
 /*   By: akoral <akoral@student.42istanbul.com.tr>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/23 15:23:50 by akoral            #+#    #+#             */
-/*   Updated: 2021/10/27 15:22:39 by akoral           ###   ########.fr       */
+/*   Updated: 2021/10/29 13:36:17 by akoral           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,23 +76,4 @@ char	*ft_strcapitalize(char *str)
 		i++;
 	}
 	return (str);
-}
-
-int		main(void)
-{
-	char	*str_base;
-	char	str_cap[100];
-	int		index;
-
-	str_base = "salut, comment tu vas ? 42mots quarante-deux; cinquante+et+un";
-	index = 0;
-	while (index < 100)
-	{
-		str_cap[index] = str_base[index] + 0;
-		index++;
-	}
-	ft_strcapitalize(&str_cap[0]);
-	//printf("base        : %s\n", str_base);
-	//printf("capitalized : %s\n", str_lower);
-	printf("%s\n", str_cap);
 }
