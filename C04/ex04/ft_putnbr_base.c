@@ -6,7 +6,7 @@
 /*   By: akoral <akoral@student.42istanbul.com.tr>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/29 13:36:40 by akoral            #+#    #+#             */
-/*   Updated: 2021/10/29 17:38:57 by akoral           ###   ########.fr       */
+/*   Updated: 2021/10/29 18:24:20 by akoral           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,15 +71,15 @@ void	ft_putnbr_base(int nb, char *base)
 
 	no = false;
 	len = ft_strlen(base);
-	if (nb < 0)
-	{
-		ft_putchar('-');
-		return (ft_putnbr_base(-nb, base));
-	}
 	if (len == 0 || len == 1 || ft_basecheck(base) == false)
 		no = true;
 	if (no == false)
 	{
+		if (nb < 0)
+		{
+			ft_putchar('-');
+			return (ft_putnbr_base(-nb, base));
+		}
 		if (nb >= len)
 		{
 			ft_putnbr_base(nb / len, base);
@@ -88,4 +88,11 @@ void	ft_putnbr_base(int nb, char *base)
 		else
 			ft_putchar(base[nb]);
 	}
+}
+
+int		main(void)
+{
+	ft_putnbr_base(123456, "hello");
+	printf("\n");
+	fflush(stdout);
 }
