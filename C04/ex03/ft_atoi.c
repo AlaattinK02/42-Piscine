@@ -6,7 +6,7 @@
 /*   By: akoral <akoral@student.42istanbul.com.tr>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/27 17:23:11 by akoral            #+#    #+#             */
-/*   Updated: 2021/10/29 12:35:48 by akoral           ###   ########.fr       */
+/*   Updated: 2021/10/29 13:16:23 by akoral           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,36 +17,55 @@
 int	ft_intlen(char *str)
 {
 	int	i;
+	int	c;
 
 	i = 0;
+	c = 0;
 	while (str[i] != '\0')
 	{
 		if (str[i] >= 48 && str[i] <= 57)
-			i++;
+			c++;
 		else if (str[i] == 45 || str[i] == 43 || str[i] == 32)
 		{
 		}
 		else
 			break ;
+		i++;
 	}
-	return (i);
+	return (c);
 }
 
 int	ft_getminus(char *str)
 {
 	int	i;
+	int	minusval;
 
-	i = 1;
+	i = 0;
+	minusval = 1;
 	while (str[i] != '\0')
 	{
 		if (str[i] == 45)
 		{
-			i = i * -1;
+			minusval = minusval * -1;
 		}
 		else if (str[i] >= 48 && str[i] <= 57)
 			break ;
+		i++;
 	}
-	return (i);
+	return (minusval);
+}
+
+int	power(int base, int expo)
+{
+	long long	result;
+
+	result = 1;
+	while (expo != 0)
+	{
+		result *= base;
+		--expo;
+	}
+	return (result);
 }
 
 int	ft_atoi(char *str)
@@ -56,20 +75,22 @@ int	ft_atoi(char *str)
 	int	c;
 	int	i;
 
-	ilen = ft_intlen(*str);
+	ilen = ft_intlen(str);
 	ival = 0;
-	i = 0;
+	i = 1;
 	while (str[c] != '\0')
 	{
 		if (str[c] >= 48 && str[c] <= 57)
 		{
 			while (i <= ilen)
 			{
-				ival = ilen + (str[c] * 10 ^ (ilen - i));
+				printf("%d*%d + ", str[c] - 48, power(10, (ilen - i)));
+				ival = ival + ((str[c] - 48) * power(10, (ilen - i)));
 				i++;
 				c++;
 			}
 		}
+		c++;
 	}
-	return (ival);
+	return (ival * ft_getminus(str));
 }
