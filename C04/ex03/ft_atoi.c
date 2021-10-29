@@ -6,7 +6,7 @@
 /*   By: akoral <akoral@student.42istanbul.com.tr>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/27 17:23:11 by akoral            #+#    #+#             */
-/*   Updated: 2021/10/28 14:01:32 by akoral           ###   ########.fr       */
+/*   Updated: 2021/10/29 12:35:48 by akoral           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,13 +53,23 @@ int	ft_atoi(char *str)
 {
 	int	ilen;
 	int	ival;
+	int	c;
+	int	i;
 
 	ilen = ft_intlen(*str);
 	ival = 0;
-	while (ilen >= 0)
+	i = 0;
+	while (str[c] != '\0')
 	{
-
-		ilen--;
+		if (str[c] >= 48 && str[c] <= 57)
+		{
+			while (i <= ilen)
+			{
+				ival = ilen + (str[c] * 10 ^ (ilen - i));
+				i++;
+				c++;
+			}
+		}
 	}
 	return (ival);
 }
