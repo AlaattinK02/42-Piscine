@@ -6,7 +6,7 @@
 /*   By: akoral <akoral@student.42istanbul.com.tr>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/29 13:36:40 by akoral            #+#    #+#             */
-/*   Updated: 2021/10/29 15:23:23 by akoral           ###   ########.fr       */
+/*   Updated: 2021/10/29 17:38:57 by akoral           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,31 +20,72 @@ void	ft_putchar(char c)
 	write(1, &c, 1);
 }
 
-void	ft_put_base(int nb, char *base)
+int	ft_strlen(char *str)
+{
+	int	i;
+
+	i = 0;
+	while (true)
+	{
+		if (str[i] == '\0')
+		{
+			break ;
+		}
+		i++;
+	}
+	return (i);
+}
+
+bool	ft_basecheck(char *base)
+{
+	int		i;
+	int		lenbase;
+	int		si;
+	bool	norepeat;
+
+	norepeat = true;
+	lenbase = ft_strlen(base);
+	i = 0;
+	while (base[i] != '\0')
+	{
+		if (base[i] == '+' || base[i] == '-')
+			norepeat = false;
+		si = i + 1;
+		while (si <= lenbase)
+		{
+			if (base[i] == base[si])
+			{
+				norepeat = false;
+			}
+			si++;
+		}
+		i++;
+	}
+	return (norepeat);
+}
+
+void	ft_putnbr_base(int nb, char *base)
 {
 	int		len;
 	bool	no;
 
-	len = 0;
 	no = false;
-	while (base[len])
+	len = ft_strlen(base);
+	if (nb < 0)
 	{
-		if (base[len] == '+' || base[len] == '-')
-			no = true;
-		len++;
+		ft_putchar('-');
+		return (ft_putnbr_base(-nb, base));
 	}
-	if (len == 0 || len == 1)
+	if (len == 0 || len == 1 || ft_basecheck(base) == false)
 		no = true;
 	if (no == false)
 	{
 		if (nb >= len)
 		{
-			ft_put_base(nb / len, base);
-			ft_put_base(nb % len, base);
+			ft_putnbr_base(nb / len, base);
+			ft_putnbr_base(nb % len, base);
 		}
 		else
-		{
 			ft_putchar(base[nb]);
-		}
 	}
 }

@@ -6,7 +6,7 @@
 /*   By: akoral <akoral@student.42istanbul.com.tr>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/27 17:23:11 by akoral            #+#    #+#             */
-/*   Updated: 2021/10/29 13:16:23 by akoral           ###   ########.fr       */
+/*   Updated: 2021/10/29 17:22:54 by akoral           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,7 +55,7 @@ int	ft_getminus(char *str)
 	return (minusval);
 }
 
-int	power(int base, int expo)
+int	ft_power(int base, int expo)
 {
 	long long	result;
 
@@ -78,14 +78,14 @@ int	ft_atoi(char *str)
 	ilen = ft_intlen(str);
 	ival = 0;
 	i = 1;
+	c = 0;
 	while (str[c] != '\0')
 	{
 		if (str[c] >= 48 && str[c] <= 57)
 		{
 			while (i <= ilen)
 			{
-				printf("%d*%d + ", str[c] - 48, power(10, (ilen - i)));
-				ival = ival + ((str[c] - 48) * power(10, (ilen - i)));
+				ival = ival + ((str[c] - 48) * ft_power(10, (ilen - i)));
 				i++;
 				c++;
 			}

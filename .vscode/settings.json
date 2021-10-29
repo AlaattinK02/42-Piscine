@@ -2,6 +2,10 @@
     "files.associations": {
 		"stdio.h": "c",
 		"sstream": "c",
-		"unistd.h": "c"
+		"unistd.h": "c",
+		"bitset": "c",
+		"functional": "c",
+		"iterator": "c",
+		"memory": "c"
 	}
 }
