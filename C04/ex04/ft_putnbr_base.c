@@ -6,7 +6,7 @@
 /*   By: akoral <akoral@student.42istanbul.com.tr>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/29 13:36:40 by akoral            #+#    #+#             */
-/*   Updated: 2021/10/29 14:11:23 by akoral           ###   ########.fr       */
+/*   Updated: 2021/10/29 15:23:23 by akoral           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,21 +23,28 @@ void	ft_putchar(char c)
 void	ft_put_base(int nb, char *base)
 {
 	int		len;
+	bool	no;
 
 	len = 0;
+	no = false;
 	while (base[len])
-		len++;
-	if (nb >= len)
 	{
-		ft_put_base(nb / len, base);
-		ft_put_base(nb % len, base);
+		if (base[len] == '+' || base[len] == '-')
+			no = true;
+		len++;
 	}
-	else
-		ft_putchar(base[nb]);
-		printf("%d\n", nb);
-}
-
-int	main(void)
-{
-	ft_put_base(3131, "012345");
+	if (len == 0 || len == 1)
+		no = true;
+	if (no == false)
+	{
+		if (nb >= len)
+		{
+			ft_put_base(nb / len, base);
+			ft_put_base(nb % len, base);
+		}
+		else
+		{
+			ft_putchar(base[nb]);
+		}
+	}
 }
