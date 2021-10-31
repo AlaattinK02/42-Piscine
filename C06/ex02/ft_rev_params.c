@@ -6,7 +6,7 @@
 /*   By: akoral <akoral@student.42istanbul.com.tr>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/31 08:52:10 by akoral            #+#    #+#             */
-/*   Updated: 2021/10/31 08:52:10 by akoral           ###   ########.fr       */
+/*   Updated: 2021/10/31 19:33:20 by akoral           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 
 int	ft_strlen(char *str)
 {
-	int i;
+	int	i;
 
 	i = 0;
 	while (str[i] != '\0')
@@ -23,12 +23,11 @@ int	ft_strlen(char *str)
 	return (i);
 }
 
-int main(int argc, char **argv)
+int	main(int argc, char **argv)
 {
-	int i;
+	int	i;
 
 	i = 1;
-
 	while (i < argc)
 	{
 		write (1, argv[argc - i], ft_strlen(argv[argc - i]));

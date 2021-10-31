@@ -1,26 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_print_program_name.c                            :+:      :+:    :+:   */
+/*   ft_iterative_power.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: akoral <akoral@student.42istanbul.com.tr>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/10/30 18:36:05 by akoral            #+#    #+#             */
-/*   Updated: 2021/10/31 19:34:27 by akoral           ###   ########.fr       */
+/*   Created: 2021/10/31 17:04:37 by akoral            #+#    #+#             */
+/*   Updated: 2021/10/31 17:13:59 by akoral           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
+#include <stdio.h>
+#include <string.h>
+#include <stdbool.h>
 
-void	ft_putstr(char *str)
+int	ft_iterative_power(int nb, int power)
 {
-	while (*str)
-		write(1, str++, 1);
-}
+	long long	result;
 
-int	main(int argc, char **argv)
-{
-	if (argc > 0)
-		ft_putstr(argv[0]);
-	write(1, "\n", 1);
+	result = 1;
+	if (power < 0)
+		return (0);
+	while (power != 0)
+	{
+		result = result * nb;
+		--power;
+	}
+	return (result);
 }

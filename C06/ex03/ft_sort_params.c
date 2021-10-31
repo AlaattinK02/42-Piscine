@@ -6,7 +6,7 @@
 /*   By: akoral <akoral@student.42istanbul.com.tr>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/31 08:59:58 by akoral            #+#    #+#             */
-/*   Updated: 2021/10/31 08:59:58 by akoral           ###   ########.fr       */
+/*   Updated: 2021/10/31 18:47:15 by akoral           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 
 int	ft_strlen(char *str)
 {
-	int i;
+	int	i;
 
 	i = 0;
 	while (str[i] != '\0')
@@ -25,7 +25,7 @@ int	ft_strlen(char *str)
 
 int	ft_print_params(int argc, char **argv)
 {
-	int i;
+	int	i;
 
 	i = 1;
 	while (i < argc)
@@ -49,7 +49,7 @@ int	ft_strcmp(char *s1, char *s2)
 	return (s1[i] - s2[i]);
 }
 
-int main(int argc, char **argv)
+int	main(int argc, char **argv)
 {
 	int		i;
 	int		j;
@@ -71,5 +71,5 @@ int main(int argc, char **argv)
 		}
 		i++;
 	}
-	ft_print_params(argc,argv);
+	ft_print_params(argc, argv);
 }
