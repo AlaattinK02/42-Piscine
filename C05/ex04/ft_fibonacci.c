@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_recursive_power.c                               :+:      :+:    :+:   */
+/*   ft_fibonacci.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: akoral <akoral@student.42istanbul.com.tr>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/10/31 17:14:16 by akoral            #+#    #+#             */
-/*   Updated: 2021/10/31 19:51:28 by akoral           ###   ########.fr       */
+/*   Created: 2021/10/31 19:52:32 by akoral            #+#    #+#             */
+/*   Updated: 2021/10/31 20:07:48 by akoral           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,14 @@
 #include <string.h>
 #include <stdbool.h>
 
-int	ft_recursive_power(int nb, int power)
+int	ft_fibonacci(int index)
 {
-	if (power < 0)
+	if (index == 0)
 		return (0);
-	if (power == 0)
+	else if (index < 0)
+		return (-1);
+	else if (index == 1)
 		return (1);
-	return (nb * ft_recursive_power(nb, power - 1));
+	else
+		return (ft_fibonacci(index - 1) + ft_fibonacci(index - 2));
 }
