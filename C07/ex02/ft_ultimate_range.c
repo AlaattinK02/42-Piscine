@@ -6,7 +6,7 @@
 /*   By: akoral <akoral@student.42istanbul.com.tr>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/03 18:22:07 by akoral            #+#    #+#             */
-/*   Updated: 2021/11/05 19:23:56 by akoral           ###   ########.fr       */
+/*   Updated: 2021/11/09 16:00:30 by akoral           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,7 @@ int	main(void)
 {
 	int range;
 
-	range = ft_ultimate_range(ft_range(1,),1,3);
+	range = ft_ultimate_range(ft_range(range,1,3);
 
 	printf("%d",range);
 }
